@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEET and JEE Options</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #4d8597;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #4821b4;
+      color: rgb(255, 255, 255);
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background-color: #032c8a;
+    }
+    #options, #message {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Choose NEET or JEE</h1>
+
+<div id="main-buttons">
+  <button class="button" onclick="showOptions()">NEET</button>
+  <button class="button" onclick="showOptions()">JEE</button>
+</div>
+
+<div id="options" style="display:none;">
+  <button class="button" onclick="showMessage('general')">General</button>
+  <button class="button" onclick="showMessage('st')">ST</button>
+  <button class="button" onclick="showMessage('sc')">SC</button>
+  <button class="button" onclick="showMessage('obc')">OBC</button>
+</div>
+
+<div id="message" style="font-size:24px; color: #333; margin-top:20px;"></div>
+
+<script>
+  function showOptions() {
+    document.getElementById('main-buttons').style.display = 'none';
+    document.getElementById('options').style.display = 'block';
+  }
+
+  function showMessage(category) {
+    let msg = '';
+    if (category === 'general') {
+      msg = 'Phir to tu pass nahi hogi ';
+    } else if (category === 'st' || category === 'sc') {
+      msg = 'Chill mar nikal jayega ';
+    } else if (category === 'obc') {
+      msg = 'Lage raho Munna Bhai';
+    }
+    document.getElementById('options').style.display = 'none';
+    document.getElementById('message').innerText = msg;
+  }
+</script>
+
+</body>
+</html>
